@@ -1,20 +1,37 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Cart from './Cart';
 import { data } from './cartData';
-import Modal from './Modal';
 class App extends React.Component {
   state = {
     cart: data.productsInCart
+  }
+  removeProduct = (id) => {
+    let cart = this.state.cart;
+    let i = cart.findIndex(val=> val.p_id === id);
+    if(i>=0) {
+      cart.splice(i,1);
+    }
+    if(cart.length === 0) {
+      alert("no Products left reloading");
+      window.location.reload();
+    }
+    this.setState({cart});
+  }
+  updateProduct = (product) => {
+    let cart = this.state.cart;
+    let i = cart.findIndex(val=> val.p_id === product.p_id);
+    if(i>=0) {
+      cart.splice(i,1,product);
+    }
+    this.setState({cart});
   }
   componentDidMount() {
   }
   render() {
     return (
       <div className="container-fluid">
-        <Modal  />
-        <Cart data={this.state.cart} />
+        <Cart data={this.state.cart} updateProduct={this.updateProduct} removeProduct={this.removeProduct} />
       </div>
     );
   }

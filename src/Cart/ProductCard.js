@@ -1,5 +1,4 @@
 import React from 'react';
-import tee from '../assets/T1.jpg';
 import './ProductCard.scss';
 function ProductCard(props) {
     return (
@@ -10,8 +9,8 @@ function ProductCard(props) {
                 <div className="info">Style: {props.p_style}</div>
                 <div className="info">Color: {props.p_selected_color.name}</div>
                 <div className="action-block d-none d-md-block">
-                    <span className="b-right">Edit</span>
-                    <span className="b-right">Remove</span>
+                    <span className="b-right" onClick={() => props.startEdit(props.p_id)}>Edit</span>
+                    <span className="b-right" onClick={() => props.removeProduct(props.p_id)} >Remove</span>
                     <span>Save For Later</span>
                 </div>
                 <div className="size d-md-none">Size:  {props.p_selected_size.code}</div>
@@ -19,8 +18,13 @@ function ProductCard(props) {
                 <div className="price d-md-none"><sup>$</sup>{props.p_price}</div>
             </div>
             <div className="col-md-1 col-6 size d-none d-md-block">{props.p_selected_size.code}</div>
-            <div className="col-md-1 col-6 qty d-none d-md-block"><input readOnly value="1" type="number" /></div>
+            <div className="col-md-1 col-6 qty d-none d-md-block"><input readOnly value={props.p_quantity} type="number" /></div>
             <div className="col-md-1 col-6 price d-none d-md-block"><sup>$</sup>{props.p_price}</div>
+            <div className="col-12 mobile-action-block d-md-none">
+                    <span className="b-right" onClick={() => props.startEdit(props.p_id)}>Edit</span>
+                    <span className="b-right" onClick={() => props.removeProduct(props.p_id)} >Remove</span>
+                    <span className="b-right">Save For Later</span>
+                </div>
         </div>
     )
 }

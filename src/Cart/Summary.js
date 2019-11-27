@@ -60,7 +60,7 @@ class Summary extends React.Component {
                                 </div>
                                 <div className="row small-block b-bottom">
                                     <div className="col-7 left-label">ESITMATED SHIPPING* <br /><span className="small-label">You qualify for free shipping because your order is over 150</span></div>
-                                    <div className="col-5 right">{this.state.shipping > 0 ? <><sup>$</sup>{this.state.discount}</> : 'FREE'}</div>
+                                    <div className="col-5 right">{this.state.shipping > 0 ? <><sup>$</sup>{this.state.shipping}</> : 'FREE'}</div>
                                 </div>
                                 <div className="row total-ammount">
                                     <div className="col-7 left-label">ESITMATED TOTAL <br /><span className="small-label">Tax will be applied during checkout.</span></div>

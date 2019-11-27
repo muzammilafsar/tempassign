@@ -1,3 +1,4 @@
+@import '../mixins.scss';
 .modal {
     display: block;
   position: fixed; /* Stay in place */
@@ -16,23 +17,11 @@
       padding: 20px;
       border: 1px solid #888;
       width: 80%;
-    }
-    .details-container {
-        text-align: center  ;
-        .product-name {
-            font-size: 25px;
-            color: #9b9b9b;
-        }
-        .price {
-            font-size: 60px;
-            sup {
-            color: #9b9b9b;
-            }
-        }
-    }
-  .image-container {
-      img {
-          width: 90%;
+      .close {
+          text-align: right;
+          font-size: 20px;
+          cursor: pointer;
       }
-  }
+
+    }
 }

@@ -18,16 +18,29 @@
             font-size: 21px;
             text-transform: uppercase;
         }
+
         .action-block {
             position: absolute;
             bottom: 0;
             .b-right {
                 border-right: 1px solid dimgrey;
+                cursor: pointer;
             }
             span {
                 padding: 0 5px ;
             }
             
+        }
+    }
+    .mobile-action-block {
+        text-align: center;
+        .b-right {
+            padding: 0 10px;
+            border-right: 1px solid dimgrey;
+            cursor: pointer;
+            &:last-child{
+                border-right: none;
+            }
         }
     }
 }

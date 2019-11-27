@@ -1,0 +1,64 @@
+@import "../mixins.scss";
+.edit-container {
+    .details-container {
+          
+        @include mobile {
+            order: 2;
+        }
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        div {
+            padding-top: 20px;
+        }
+        text-align: center  ;
+        .edit-button {
+            button {
+                background-color: #0277bd;
+                color: #ffffff;
+                border: none;
+                padding: 14px 70px;
+            }
+        }
+        .product-name {
+            font-size: 25px;
+            color: #9b9b9b;
+            text-transform: uppercase;
+        }
+        .colors {
+            div.selected {
+                border: 2px solid gray;
+            }
+            div{
+                height: 30px;
+                margin:5px;
+                display: inline-block;
+                width: 30px;
+            }
+        }
+        .price {
+            font-size: 60px;
+            sup {
+            color: #9b9b9b;
+            }
+        }
+        .dropdown-wrapper {
+            select {
+                border-color: #e0e0e0;
+                .grey{
+                    color: #9b9b9b;
+                }
+                padding: 8px 13px;
+                width: 100px;
+                &:first-child {
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+  .image-container {
+      img {
+          width: 90%;
+      }
+  }
+}
