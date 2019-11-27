@@ -1,7 +1,6 @@
 import React from 'react';
 import './Modal.scss';
-import tee from '../assets/T1.jpg';
-export default function Modal({ show, close, children }) {
+function Modal({ show, close, children }) {
     return (
             show ?
             <div className="modal">
@@ -17,3 +16,4 @@ export default function Modal({ show, close, children }) {
     )
 
 }
+export default Modal;

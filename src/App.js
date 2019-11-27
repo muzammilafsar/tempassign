@@ -4,7 +4,8 @@ import Cart from './Cart';
 import { data } from './cartData';
 class App extends React.Component {
   state = {
-    cart: data.productsInCart
+    cart: data.productsInCart,
+    error: false
   }
   removeProduct = (id) => {
     let cart = this.state.cart;
@@ -28,8 +29,14 @@ class App extends React.Component {
   }
   componentDidMount() {
   }
+  componentDidCatch(){
+    this.setState({error: true})
+  }
   render() {
     return (
+      this.state.error?
+      <div>Error occurred please reload</div>
+      :
       <div className="container-fluid">
         <Cart data={this.state.cart} updateProduct={this.updateProduct} removeProduct={this.removeProduct} />
       </div>
