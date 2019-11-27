@@ -1,26 +1,23 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Cart from './Cart';
+import { data } from './cartData';
+import Modal from './Modal';
+class App extends React.Component {
+  state = {
+    cart: data.productsInCart
+  }
+  componentDidMount() {
+  }
+  render() {
+    return (
+      <div className="container-fluid">
+        <Modal  />
+        <Cart data={this.state.cart} />
+      </div>
+    );
+  }
 }
 
 export default App;

@@ -1,0 +1,33 @@
+.product-card {
+    border-top: 1px solid grey;
+    padding: 15px 0;
+    .qty {
+        input{
+            width: 30px;
+        }
+    }
+    .detail {
+        .price {
+            font-size: 24px;
+            font-weight: 400;
+        }
+        .info {
+            text-transform: uppercase;
+        }
+        .title {
+            font-size: 21px;
+            text-transform: uppercase;
+        }
+        .action-block {
+            position: absolute;
+            bottom: 0;
+            .b-right {
+                border-right: 1px solid dimgrey;
+            }
+            span {
+                padding: 0 5px ;
+            }
+            
+        }
+    }
+}
